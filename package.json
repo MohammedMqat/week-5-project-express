@@ -2,23 +2,33 @@
   "name": "week-5-project-express",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
+  "keywords": [],
+  "homepage": "https://github.com/MohammedMqat/week-5-project-express#readme",
+  "bugs": {
+    "url": "https://github.com/MohammedMqat/week-5-project-express/issues"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "license": "ISC",
+  "author": "",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MohammedMqat/week-5-project-express.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/MohammedMqat/week-5-project-express/issues"
+  "directories": {
+    "doc": "docs"
   },
-  "homepage": "https://github.com/MohammedMqat/week-5-project-express#readme"
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.41.0",
+    "oxlint": "^1.56.0",
+    "supertest": "^7.2.2",
+    "vitest": "^4.1.0"
+  }
 }
