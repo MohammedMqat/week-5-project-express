@@ -45,7 +45,10 @@ src/
 - **No async/await** — use `.then()` / `.catch()` Promise chains only
 - **No frontend framework** — vanilla HTML, CSS, JS
 - **No build tools** — files served directly as static assets
-- Express only acts as a static file server for the frontend
+- **Proxy pattern**: frontend fetches from own Express server, Express fetches from Jikan API
+  - Frontend calls e.g. `/api/top-anime`, `/api/search?q=...`, `/api/anime/:id`
+  - Express routes/controllers fetch from Jikan and return the data
+  - Student learned this pattern in week-3
 
 ### Current State (as of 2026-03-21)
 - `src/app.js` already has `express.static` pointed at `public/`
@@ -66,8 +69,7 @@ src/
 ### Student Progress
 - [x] Replace `public/index.html` with Top Anime page structure
 - [x] Fetch top anime from Jikan (`data.data` is the array)
-- [x] Confirmed API response in console — array of 10 anime visible
-- [ ] Loop through `data.data` with `.forEach()` and render cards using `container.innerHTML +=`
+- [x] Render 10 anime cards with image, title, and score using `createElement` + `appendChild`
 - [ ] Build search page with input + fetch on submit
 - [ ] Build detail page that reads anime ID and fetches details
 - [ ] Style all 3 pages with CSS
