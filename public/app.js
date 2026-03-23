@@ -1,5 +1,5 @@
 const container = document.getElementById("container");
-fetch(`https://api.jikan.moe/v4/top/anime?limit=10`)
+fetch(`/api/TopAnime`)
   .then((response) => response.json())
   .then((data) => {
     console.log(data.data);
@@ -8,6 +8,9 @@ fetch(`https://api.jikan.moe/v4/top/anime?limit=10`)
       const img = document.createElement("img");
       img.src = element.images.jpg.image_url;
 
+      card.addEventListener("click", () => {
+        window.location.href = /detail/?id=";
+      });
       const p = document.createElement("p");
       p.textContent = element.title;
 

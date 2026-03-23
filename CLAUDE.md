@@ -124,3 +124,9 @@ src/
    - Consider: what if Jikan is rate-limited? Tests must not depend on external availability
 
 6. **Stub files** — Real Jikan response stubs stored in `src/tests/stubs/`. Use `search-one-piece.json` for search tests. Import with `{ type: "json" }` assertion.
+
+7. **Home page proxy** — Top anime home page (`public/app.js`) must also go through Express proxy, not call Jikan directly.
+
+8. **Detail page** — Must accept an `animeId` from the URL query param (e.g. `/detail/?id=21`). Fetches anime detail via Express proxy using that ID.
+
+9. **Navigation** — Cards on both home page and search results must be clickable and navigate to `/detail/?id={mal_id}`.
