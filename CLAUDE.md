@@ -129,6 +129,16 @@ src/
 
 7. **Home page proxy** — Top anime home page (`public/app.js`) must also go through Express proxy, not call Jikan directly.
 
+10. **PR Review comments (from Amoodaa on PR #4)**:
+    - `public/search/app.js` — Add `cursor: pointer` on hover to indicate cards are clickable
+    - `src/controllers/top-anime.js` — Add graceful error handling (`.catch()`)
+    - `src/controllers/anime-search.js` — Add graceful error handling (`.catch()`)
+    - `src/controllers/anime-details.js` — Add graceful error handling (`.catch()`)
+    - `src/tests/search.test.js` — Remove commented-out tests; add more expectations that assess the response body
+    - `src/app.js` — Look into URL encoding (`encodeURIComponent`) and handle it gracefully on search and detail pages
+    - `src/router.js` — Use kebab-case for URL paths (e.g. `/api/top-anime` not `/api/TopAnime`); read about RESTful API naming conventions
+    - `README.md` — Delete current content and write a proper README with user persona, user stories, and problem statement
+
 8. **Detail page** — Must accept an `animeId` from the URL query param (e.g. `/detail/?id=21`). Fetches anime detail via Express proxy using that ID.
 
 9. **Navigation** — Cards on both home page and search results must be clickable and navigate to `/detail/?id={mal_id}`.
