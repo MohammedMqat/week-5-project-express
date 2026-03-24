@@ -2,7 +2,7 @@ const details = document.getElementById("anime-details-container");
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
-fetch(`/api/anime-details/${id}`)
+fetch(`/api/anime-details/${encodeURIComponent(id)}`)
   .then((response) => response.json())
   .then((data) => {
     const detail = document.createElement("div");

@@ -5,6 +5,7 @@ fetch(`/api/top-anime`)
     console.log(data.data);
     data.data.forEach((element) => {
       const card = document.createElement("div");
+      card.className = "card";
       const img = document.createElement("img");
       img.src = element.images.jpg.image_url;
 

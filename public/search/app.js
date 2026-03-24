@@ -5,13 +5,13 @@ btn.addEventListener("click", (event) => {
 
   const result = document.getElementById("text").value;
 
-  fetch(`/api/search?q=${result}`)
+  fetch(`/api/search?q=${encodeURIComponent(result)}`)
     .then((response) => response.json())
     .then((data) => {
       searchResultsContainer.innerHTML = "";
       data.data.forEach((element) => {
         const card = document.createElement("div");
-
+        card.className = "card";
         const img = document.createElement("img");
         img.src = element.images.jpg.image_url;
 
