@@ -20,6 +20,9 @@ previous.addEventListener("click", () => {
 });
 
 function renderAnime(data) {
+  const hasNextPage = data.pagination.has_next_page;
+  next.disabled = !hasNextPage;
+
   searchResultsContainer.innerHTML = "";
 
   data.data.forEach((element) => {
