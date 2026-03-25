@@ -1,28 +1,28 @@
-
 const searchParams = new URLSearchParams(location.search);
-let currentPage = searchParams.get("page") || 1
-let searchQuery = searchParams.get("q")
+let currentPage = searchParams.get("page") || 1;
+let searchQuery = searchParams.get("q");
 const searchResultsContainer = document.getElementById("search-results");
-const previous = document.createElement("button")
-previous.textContent = "previous"
-const next = document.createElement("button")
-next.textContent = "next"
+const previous = document.createElement("button");
+previous.textContent = "previous";
+const next = document.createElement("button");
+next.textContent = "next";
 
 next.addEventListener("click", () => {
-  currentPage = currentPage + 1
-  fetchAnime(searchQuery, currentPage).then(renderAnime)
-  history.pushState(null, "", `/search?q=${searchQuery}&page=${currentPage}`)
-})
+  currentPage = currentPage + 1;
+  fetchAnime(searchQuery, currentPage).then(renderAnime);
+  history.pushState(null, "", `/search?q=${searchQuery}&page=${currentPage}`);
+});
 previous.addEventListener("click", () => {
   if (currentPage > 1) {
-    currentPage = currentPage - 1
-    fetchAnime(searchQuery, currentPage).then(renderAnime)
-    history.pushState(null, "", `/search?q=${searchQuery}&page=${currentPage}`)
+    currentPage = currentPage - 1;
+    fetchAnime(searchQuery, currentPage).then(renderAnime);
+    history.pushState(null, "", `/search?q=${searchQuery}&page=${currentPage}`);
   }
-})
+});
 function fetchAnime(query, page = 1) {
-  return fetch(`/api/search?q=${encodeURIComponent(query)}&page=${page}`)
-    .then((response) => response.json());
+  return fetch(`/api/search?q=${encodeURIComponent(query)}&page=${page}`).then((response) =>
+    response.json(),
+  );
 }
 function renderAnime(data) {
   searchResultsContainer.innerHTML = "";
@@ -48,10 +48,10 @@ function renderAnime(data) {
     card.appendChild(score);
 
     searchResultsContainer.appendChild(card);
-  })
+  });
   searchResultsContainer.appendChild(previous);
   searchResultsContainer.appendChild(next);
-
-
-};
-if (searchQuery) { fetchAnime(searchQuery, currentPage).then(renderAnime) }
+}
+if (searchQuery) {
+  fetchAnime(searchQuery, currentPage).then(renderAnime);
+}
