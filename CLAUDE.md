@@ -55,12 +55,15 @@ src/
   - Express routes/controllers fetch from Jikan and return the data
   - Student learned this pattern in week-3
 
-### Current State (as of 2026-03-21)
+### Current State (as of 2026-03-25)
 
 - `src/app.js` already has `express.static` pointed at `public/`
 - `public/index.html` updated — now shows "Top Anime" with `<div id="container"></div>` and links to `./app.js`
-- `public/app.js` is the active JS file (old `script.js` code is commented out)
-- Branch: `feat/get-train-schedule` (frontend work is happening here)
+- `public/app.js` is the active JS file
+- Branch: `feat/anime-showcase`
+- Search page pagination complete — Next/Previous buttons, URL reflects state, refresh works
+- Search page uses native form GET + `URLSearchParams` to read URL on load
+- Detail page still uses `/detail/?id=` — needs renaming to `/anime/:animeId`
 
 ### Jikan API Endpoints to Use
 
@@ -88,7 +91,7 @@ src/
 - [x] kebab-case routes (`/api/top-anime`, `/api/search`, `/api/anime-details/:id`)
 - [x] `cursor: pointer` on card hover for home and search pages
 - [x] URL encoding with `encodeURIComponent` on search and detail pages
-- [ ] Add pagination to search page
+- [x] Add pagination to search page (Next/Previous buttons, URL reflects q+page, refresh restores results)
 - [ ] Learn and apply caching on Express routes (e.g. cache Jikan responses to avoid rate limiting)
 - [x] Split render logic from fetch logic (separate functions) on all pages
 - [x] Finish mocked test using `search-one-piece.json` stub
@@ -96,6 +99,7 @@ src/
 - [ ] Add unhappy path tests (rate limit simulation, invalid ID)
 - [x] Write proper README (user persona, user stories, problem statement)
 - [ ] Style all 3 pages with CSS
+- [ ] Rename detail page URL to RESTful format `/anime/:animeId`
 
 ### Student Understanding Checkpoints
 
@@ -107,6 +111,10 @@ src/
 - Knows proxy pattern — frontend never calls external API directly
 - Understands why mocking fetch matters (flaky tests, rate limits)
 - Struggles with nested bracket/parenthesis structure in tests — needs more practice
+- Understands URL as source of truth — `URLSearchParams`, `history.pushState`, reading params on load
+- Understands `||` fallback pattern for default values
+- Understands `document.querySelector` vs `getElementById`
+- Understands native form GET behavior (no JS needed for URL navigation)
 
 ### Test File State (`src/tests/search.test.js`)
 
