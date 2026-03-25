@@ -63,7 +63,7 @@ src/
 - Branch: `feat/anime-showcase`
 - Search page pagination complete — Next/Previous buttons, URL reflects state, refresh works
 - Search page uses native form GET + `URLSearchParams` to read URL on load
-- Detail page still uses `/detail/?id=` — needs renaming to `/anime/:animeId`
+- Detail page now uses RESTful URL `/anime/:id` — ID extracted from `window.location.pathname`
 
 ### Jikan API Endpoints to Use
 
@@ -82,7 +82,7 @@ src/
 - [x] Replace `public/index.html` with Top Anime page structure
 - [x] Fetch top anime via Express proxy (`/api/top-anime`)
 - [x] Render 10 anime cards with image, title, and score using `createElement` + `appendChild`
-- [x] Cards clickable — navigate to `/detail/?id={mal_id}`
+- [x] Cards clickable — navigate to `/anime/{mal_id}` (RESTful, updated from `/detail/?id=`)
 - [x] Build search page — input, button, event listener, fetch on submit, clear old results
 - [x] Proxy pattern on all pages — frontend never calls Jikan directly
 - [x] Detail page — reads `id` from URL, fetches `/api/anime-details/:id`, renders title, image, score, synopsis, episodes, type
@@ -99,7 +99,7 @@ src/
 - [ ] Add unhappy path tests (rate limit simulation, invalid ID)
 - [x] Write proper README (user persona, user stories, problem statement)
 - [ ] Style all 3 pages with CSS
-- [ ] Rename detail page URL to RESTful format `/anime/:animeId`
+- [x] Rename detail page URL to RESTful format `/anime/:animeId`
 
 ### Student Understanding Checkpoints
 
@@ -156,6 +156,6 @@ src/
    - `src/router.js` — Use kebab-case for URL paths (e.g. `/api/top-anime` not `/api/top-anime`); read about RESTful API naming conventions
    - `README.md` — Delete current content and write a proper README with user persona, user stories, and problem statement
 
-9. **Detail page** — Must accept an `animeId` from the URL query param (e.g. `/detail/?id=21`). Fetches anime detail via Express proxy using that ID.
+9. **Detail page** — Uses RESTful URL `/anime/:id` (e.g. `/anime/21`). Express serves `public/detail/index.html` via a manual route in `router.js`. Frontend reads ID from `window.location.pathname.split("/")[2]`.
 
-10. **Navigation** — Cards on both home page and search results must be clickable and navigate to `/detail/?id={mal_id}`.
+10. **Navigation** — Cards on both home page and search results navigate to `/anime/{mal_id}`.
