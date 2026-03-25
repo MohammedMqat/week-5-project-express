@@ -1,6 +1,5 @@
 const details = document.getElementById("anime-details-container");
 
-console.log(window.location);
 const id = window.location.pathname.split("/")[2];
 
 function fetchAnime() {
