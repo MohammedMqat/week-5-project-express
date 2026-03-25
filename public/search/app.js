@@ -23,6 +23,9 @@ function renderAnime(data) {
   const hasNextPage = data.pagination.has_next_page;
   next.disabled = !hasNextPage;
 
+  const hasPreviousPage = data.pagination.current_page !== 1;
+  previous.disabled = !hasPreviousPage;
+
   searchResultsContainer.innerHTML = "";
 
   data.data.forEach((element) => {
