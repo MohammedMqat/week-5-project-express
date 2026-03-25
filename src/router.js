@@ -10,6 +10,5 @@ router.get("/api/top-anime", TopAnime);
 router.get("/api/search", searchAnime);
 router.get("/api/anime-details/:id", animeDetails);
 router.get("/anime/:id", (req, res) => {
-  res.sendFile(path.join(import.meta.dirname, "..", "public", "anime", "index.html"))
-})
-
+  res.sendFile(path.join(import.meta.dirname, "..", "public", "anime", "index.html"));
+});
