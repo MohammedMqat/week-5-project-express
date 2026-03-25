@@ -1,7 +1,8 @@
 const details = document.getElementById("anime-details-container");
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
-//const id = window.location.pathname.split("/")[2]
+
+console.log(window.location)
+const id = window.location.pathname.split("/")[2]
+
 function fetchAnime() {
   return fetch(`/api/anime-details/${encodeURIComponent(id)}`).then((response) => response.json());
 }
