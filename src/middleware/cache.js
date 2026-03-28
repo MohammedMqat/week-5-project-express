@@ -13,6 +13,7 @@ export const cacheMiddleware = (req, res, next) => {
     return res.json(data);
   }
 
+  // Imad note: This is monkey patching the `res.json` call, i dont know of easier ways to pick up the response.body, that means if you dont use res.json it does not get cached.
   const oldResJson = res.json;
 
   res.json = function (data) {

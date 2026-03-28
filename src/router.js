@@ -11,7 +11,7 @@ router.get("/anime/:id", (req, res) => {
   res.sendFile(path.join(import.meta.dirname, "..", "public", "anime", "index.html"));
 });
 
-router.use(cacheMiddleware);
+router.use(cacheMiddleware); // This line caches whats after only
 
 router.get("/api/top-anime", TopAnime);
 router.get("/api/search", searchAnime);
