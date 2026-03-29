@@ -56,7 +56,7 @@ function renderAnime(data) {
 }
 
 if (searchQuery) {
-  fetch(`/api/search?q=${encodeURIComponent(searchQuery)}&page=${currentPage}`)
+  fetch(`/api/anime/search?q=${encodeURIComponent(searchQuery)}&page=${currentPage}`)
     .then((response) => response.json())
     .then(renderAnime);
 }

@@ -3,7 +3,7 @@ const details = document.getElementById("anime-details-container");
 const id = window.location.pathname.split("/")[2];
 
 function fetchAnime() {
-  return fetch(`/api/anime-details/${encodeURIComponent(id)}`).then((response) => response.json());
+  return fetch(`/api/anime/${encodeURIComponent(id)}`).then((response) => response.json());
 }
 function renderAnime(data) {
   const detail = document.createElement("div");

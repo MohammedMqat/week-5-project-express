@@ -1,7 +1,7 @@
 const container = document.getElementById("container");
 fetchAnime().then(renderAnime);
 function fetchAnime() {
-  return fetch(`/api/top-anime`).then((response) => response.json());
+  return fetch(`/api/anime/top`).then((response) => response.json());
 }
 function renderAnime(data) {
   data.data.forEach((element) => {
