@@ -3,7 +3,7 @@
   "checkpoint_id": "6dd0a0286bdb",
   "strategy": "manual-commit",
   "branch": "feat/manga",
-  "checkpoints_count": 3,
+  "checkpoints_count": 28,
   "files_touched": [
     "public/search/app.js",
     "public/search/index.html",
@@ -21,13 +21,19 @@
       "transcript": "/6d/d0a0286bdb/1/full.jsonl",
       "content_hash": "/6d/d0a0286bdb/1/content_hash.txt",
       "prompt": "/6d/d0a0286bdb/1/prompt.txt"
+    },
+    {
+      "metadata": "/6d/d0a0286bdb/2/metadata.json",
+      "transcript": "/6d/d0a0286bdb/2/full.jsonl",
+      "content_hash": "/6d/d0a0286bdb/2/content_hash.txt",
+      "prompt": "/6d/d0a0286bdb/2/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 36,
-    "cache_creation_tokens": 34116,
-    "cache_read_tokens": 575051,
-    "output_tokens": 6636,
-    "api_call_count": 26
+    "input_tokens": 134,
+    "cache_creation_tokens": 144305,
+    "cache_read_tokens": 1964060,
+    "output_tokens": 11874,
+    "api_call_count": 64
   }
 }

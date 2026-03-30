@@ -1,0 +1,37 @@
+{
+  "cli_version": "0.5.1",
+  "checkpoint_id": "6dd0a0286bdb",
+  "session_id": "db224c9a-51dd-4cd3-9240-16fdcfa07684",
+  "strategy": "manual-commit",
+  "created_at": "2026-03-30T21:00:04.233876584Z",
+  "branch": "feat/manga",
+  "checkpoints_count": 25,
+  "files_touched": [
+    "public/search/app.js",
+    "src/router.js"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-4-6",
+  "turn_id": "4313180e6194",
+  "checkpoint_transcript_start": 236,
+  "transcript_lines_at_start": 236,
+  "token_usage": {
+    "input_tokens": 98,
+    "cache_creation_tokens": 110189,
+    "cache_read_tokens": 1389009,
+    "output_tokens": 5238,
+    "api_call_count": 38
+  },
+  "session_metrics": {
+    "turn_count": 77
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-03-30T21:00:04.072730687Z",
+    "agent_lines": 0,
+    "human_added": 0,
+    "human_modified": 16,
+    "human_removed": 42,
+    "total_committed": 16,
+    "agent_percentage": 0
+  }
+}
