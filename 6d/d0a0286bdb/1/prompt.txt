@@ -1,0 +1,2 @@
+read files and check if something wwrong 
+Uncaught (in promise) TypeError: can't access property "forEach", data.data is undefined
