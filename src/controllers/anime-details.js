@@ -8,6 +8,7 @@ export const animeDetails = (req, res) => {
     .then((response) => response.json())
     .then((data) => res.json(data))
     .catch((error) => {
+      console.log(error);
       res.status(500).json({ message: "Internal server error: " + error.message });
     });
 };

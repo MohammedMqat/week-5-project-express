@@ -8,6 +8,7 @@ export const TopAnime = (req, res) => {
     .then((response) => response.json())
     .then((data) => res.json(data))
     .catch((error) => {
+      console.dir(JSON.stringify(error));
       res.status(500).json({ message: "Internal server error: " + error.message });
     });
 };
